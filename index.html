@@ -3,22 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Aoboshi+One&family=Pacifico&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Comforter&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
+    <title>Document</title>
 </head>
-<body>
-    <div class="container">
+<body>  
+    <div class="background_wheel">
+        <img  class="circle_text" src="img/circle_hentai_text.png" alt="text">
+        <img class="wheel" src="img/pngwing.com.png" alt="wheel">
     </div>
-        <div class="main">
-            <h3>Chornomorsk, Ukraine</h3>
-            <div class="team_name">
-                <h1 class="first_word">South</h1><h1 class="second_word">Side</h1>
-            </div>
-            <h2>ヘンタイの女の子はいつもよりも優れています、これは誰もが知っています ヘンタイの女の子はいつもよりも優れています、これは誰もが知っています ヘンタイの女の子はいつもよりも優れています、これは誰もが知っています ヘンタイの女の子はいつもよりも優れています、これは誰もが知っています ヘンタイの女の子はいつもよりも優れています、これは誰もが知っています ヘンタイの女の子はいつもよりも優れています、これは誰もが知っています ヘンタイの女の子はいつもよりも優れています、これは誰もが知っています ヘンタイの女の子はいつもよりも優れています、これは誰もが知っています ヘンタイの女の子はいつもよりも優れています、これは誰もが知っています</h2>
+    <div class="main_text">
+        <p class="upper_word">Eugen</p>
+        <p class="lower_word">Kremato</p>
     </div>
+    <script>
+        // Первый таймер для добавления класса drop_shadow через 2 секунды
+        const firstTimer = setTimeout(() => {
+          let main_text = document.querySelector('.main_text');
+          main_text.classList.add('drop_shadow');
+        }, 2000);
+      
+        // Второй таймер для удаления класса drop_shadow и добавления класса text_leave через 5 секунд
+        setTimeout(() => {
+          let main_text = document.querySelector('.main_text');
+          main_text.classList.add('leave_text');
+        }, 5000);
+      
+        // Если вы хотите отменить первый таймер, выполните:
+        // clearTimeout(firstTimer);
+      </script>
 </body>
 </html>

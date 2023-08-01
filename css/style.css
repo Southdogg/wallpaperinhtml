@@ -1,160 +1,105 @@
-/* #9e03ff */
+@keyframes wheel_rotate{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(1800deg);
+    }
+}
+@keyframes text_rotate{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(-360deg);
+    }
+}
+@keyframes drop_shadow{
+    0%{
+        text-shadow: 0px 0px 0px #858585;
+    }
+    100%{
+        text-shadow: 5px 15px 0px #858585;
+    }
+}
+@keyframes drop_word{
+    0%{
+        top: -500px;
+    }
+    100%{
+        top: 105px;
+    }
+}
+@keyframes slide_word{
+    0%{
+        left: -1000px;
+    }
+    100%{
+        left: 0px;
+    }
+}
+@keyframes text_leave{
+    0%{
+        position: relative;
+        left: 50px;
+    }
+    100%{
+        position: relative;
+        left:-950px;
+    }
+}
+@font-face {
+    font-family: PTBananaSplit;
+    src: url(../fonts/PTBananaplit/pt_bananasplit.ttf);
+}
 
 *{
-    font-family: 'Pacifico', cursive;
     margin: 0;
 }
-@keyframes h1FirstAnim{
-    0%{
-        opacity: 1;
-        color:#410082;
-        left:0px;
-    }
-    49%{
-        left:0px;
-        opacity: 1;
-    }
-    50%{
-        color: rgb(255, 255, 255);
-        left:-10px;
-        opacity: 0;
-    }
-    51%{
-        color:#e0b7fa;
-        text-shadow: #9e03ff 1px 1px 10px,
-                     #b647fb 1px 1px 30px;
-        left:0px;
-        opacity: 1;
-    }
-    100%{
-        left:0px;
-        color:#e0b7fa;
-        text-shadow: #9e03ff 1px 1px 10px,
-                     #b647fb 1px 1px 30px;
-    }
-}
-
-@keyframes h1SecondAnim{
-    0%{
-        opacity: 0;
-    }
-    23%{
-        opacity: 0;
-    }
-    25%{
-        opacity: 1;
-    }
-    26%{
-        opacity: 0;
-    }
-    29%{
-        opacity: 0;
-    }
-    30%{
-        opacity: 1;
-    }
-    31%{
-        opacity: 0;
-    }
-    50%{
-        opacity: 0;
-    }
-    51%{
-        color:#e0b7fa;
-        text-shadow: #9e03ff 1px 1px 10px,
-                     #b647fb 1px 1px 30px;
-        opacity: 1;
-    }
-    100%{
-        color:#e0b7fa;
-        text-shadow: #9e03ff 1px 1px 10px,
-                     #b647fb 1px 1px 30px;
-        opacity: 1;
-    }
-}
-
-@keyframes h2Anim{
-    0%{
-        right:2000px;
-    }
-    100%{
-        right: -2000px;
-    }
-}
-
 body{
-    margin: 0;
+    background-color: #111111;
     overflow: hidden;
-    height: 100vh;
-    background-color: #410082;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
 }
-.container{
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    background-image: url(../img/background.jpg);
-    background-size: cover;
-    opacity: 0.15;
+.wheel{
+    z-index: 2;
+    position: fixed;
+    right: -300px;
+    top: -300px;
+    animation: wheel_rotate normal 10s infinite linear;
 }
-h1{
-    font-size: 215px;
-    text-transform: uppercase;
-    /* color: #fff; */
+.circle_text{
+    animation: text_rotate normal 10s infinite linear;
+    position: fixed;
+    top: -125px;
+    right: -120px;
+    scale:2.2;
+}
+.main_text{
     position: relative;
+    left: 50px;
+    top: 220px;
+    font-family: PTBananasplit;
+    color: #fff;
+    font-size: 220px;
+    /* text-shadow: 5px 15px 0px #858585; */
 }
-.main{
-    overflow: hidden;
-    text-align: center;
-    opacity: 1;
+.drop_shadow{
+    animation: drop_shadow 1s linear normal;
+    text-shadow: 5px 15px 0px #858585;
 }
-.team_name{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.first_word{
-    animation-name: h1FirstAnim;
-    animation-duration: 10s; /* Продолжительность анимации */
-    animation-timing-function: linear; /* Тип анимации */
-    animation-delay: 1s; /* Задержка перед началом анимации */
-    animation-iteration-count: infinite; /* Количество повторений (здесь - бесконечное) */
-    animation-direction: alternate; /* Направление анимации */
-    animation-fill-mode: forwards; /* Задание состояния после завершения анимации */
-}
-.second_word{
-    animation-name: h1SecondAnim;
-    animation-duration: 10s; /* Продолжительность анимации */
-    animation-timing-function: linear; /* Тип анимации */
-    animation-delay: 1s; /* Задержка перед началом анимации */
-    animation-iteration-count: infinite; /* Количество повторений (здесь - бесконечное) */
-    animation-direction: alternate; /* Направление анимации */
-    animation-fill-mode: forwards; /* Задание состояния после завершения анимации */
-}
-.main h2{
-    font-size: 48px;
-    top:-30px;
+.upper_word{
+    animation: drop_word 2s ease-in normal;
     position: relative;
-    font-family: 'Aoboshi One', serif;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: clip;
-    animation-name: h2Anim;
-    animation-duration: 30s; /* Продолжительность анимации */
-    animation-timing-function: linear; /* Тип анимации */
-    animation-delay: 0s; /* Задержка перед началом анимации */
-    animation-iteration-count: infinite; /* Количество повторений (здесь - бесконечное) */
-    animation-direction: alternate; /* Направление анимации */
-    animation-fill-mode: forwards; /* Задание состояния после завершения анимации */
+    top: 105px;
+    left: 215px;
 }
-.main h3{
-    font-family: 'Comforter', cursive;
-    font-size: 85px;
+.lower_word{
     position: relative;
-    top: 65px;
-    color: #000;
+    left: 0px;
+    animation: slide_word 2s ease-out normal;
+}
+.leave_text{
+    animation-delay: 5s;
+    animation: text_leave 1s ease-in normal;
+    left:-950px;
 }
